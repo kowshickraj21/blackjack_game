@@ -11,8 +11,24 @@ function start(){
     sum = sum + cards[i];
 }
     document.getElementById("sum").innerHTML="Sum: " + sum;
+    comment()
 }
 
 function draw(){
     cards.push(Math.round(Math.random()*6+1));
+    sum = sum + cards[cards.length-1];
+    document.getElementById("cards").innerHTML="Cards: " + cards;
+    document.getElementById("sum").innerHTML="Sum: " + sum;
+    comment()
+}
+function comment(){
+    if (sum <= 20){
+        document.getElementById("command").innerHTML= "Draw another card";
+    }
+    else if (sum == 21){
+        document.getElementById("command").innerHTML= "You WIN!";
+    }
+    else{
+        document.getElementById("command").innerHTML= "You LOSE!";
+    }
 }
