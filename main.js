@@ -12,6 +12,8 @@ function start(){
 }
     document.getElementById("sum").innerHTML="Sum: " + sum;
     comment()
+    document.getElementById("draw").style.display= "block";
+    document.getElementById("start").style.display="none";
 }
 
 function draw(){
@@ -27,8 +29,16 @@ function comment(){
     }
     else if (sum == 21){
         document.getElementById("command").innerHTML= "You WIN!";
+        document.getElementById("draw").style.display= "none";
+        document.getElementById("reaload").style.display= "block";
     }
     else{
         document.getElementById("command").innerHTML= "You LOSE!";
+        document.getElementById("draw").style.display= "none";
+        document.getElementById("reaload").style.display= "block";
     }
+}
+function reaload(){
+    window.location.reload();
+
 }
